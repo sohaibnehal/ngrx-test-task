@@ -1,4 +1,11 @@
 <div>
   <app-header></app-header>
-  <div class="container"></div>
+  <div class="container">
+    <app-control-buttons
+      (startHandler)="startHandler()"
+      (stopHandler)="stopHandler()"
+      (resetHandler)="resetHandler()"
+    >
+    </app-control-buttons>
+  </div>
 </div>
