@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import * as fromStore from './store';
 
 @Component({
@@ -9,10 +10,16 @@ import * as fromStore from './store';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  firstNumber$: Observable<number>;
+  secondNumber$: Observable<number>;
+
   intervalDuration: number; // in ms. for timer to trigger change action
   intervalTimer: any; // interval object
 
   constructor(private store: Store<fromStore.AppState>) {
+    this.firstNumber$ = store.pipe(select(fromStore.selectFirstNumber));
+    this.secondNumber$ = store.pipe(select(fromStore.selectSecondNumber));
+
     this.intervalDuration = 1000;
   }
 

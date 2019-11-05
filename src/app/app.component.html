@@ -1,6 +1,11 @@
 <div>
   <app-header></app-header>
   <div class="container">
+    <app-view-data
+      [firstNumber$]="firstNumber$ | async"
+      [secondNumber$]="secondNumber$ | async"
+    >
+    </app-view-data>
     <app-control-buttons
       (startHandler)="startHandler()"
       (stopHandler)="stopHandler()"
