@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import * as fromLayouts from './layouts';
 
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducer, effects } from './store';
 
 @NgModule({
   declarations: [AppComponent, ...fromLayouts.layouts],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    EffectsModule.forRoot(effects),
     StoreModule.forRoot({ state: reducer })
   ],
   providers: [],
