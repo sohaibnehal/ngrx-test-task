@@ -1,8 +1,6 @@
 <div
   class="row bg-light p-3 mt-5 text-center"
-  [style.border]="
-    inputValue <= 0 ? '1px solid red' : inputValue + 'px solid blue'
-  "
+  [style.border]="styleMe(inputValue)"
 >
   <div class="col">
     <h4>Input Value: {{ inputValue }}</h4>

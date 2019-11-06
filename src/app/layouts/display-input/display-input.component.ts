@@ -9,4 +9,14 @@ export class DisplayInputComponent {
   @Input() inputValue: number;
 
   constructor() {}
+
+  // This function calculates the styling of the div
+  styleMe(value: number) {
+    if (this.inputValue < 0) {
+      value = Math.abs(value);
+      return `${value}px solid red`;
+    } else {
+      return `${value}px solid blue`;
+    }
+  }
 }

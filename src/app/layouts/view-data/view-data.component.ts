@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./view-data.component.scss']
 })
 export class ViewDataComponent {
-  @Input() firstNumber$: number;
-  @Input() secondNumber$: number;
+  @Input() firstNumber: number;
+  @Input() secondNumber: number;
 
   constructor() {}
 }
